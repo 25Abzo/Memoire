@@ -1,0 +1,120 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  padding-top: 56px; /* Adjust for fixed navbar */
+}
+
+/* Navbar */
+.navbar-brand img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.navbar-nav .nav-item .nav-link {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #ffffff;
+  background-color: #007bff;
+  border-radius: 5px;
+}
+
+/* Header Section */
+header {
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  color: white;
+}
+
+.header .display-4 {
+  font-weight: bold;
+}
+
+.header .lead {
+  font-size: 1.25rem;
+}
+
+.header .btn {
+  padding: 10px 30px;
+  font-size: 1.2rem;
+}
+
+/* About Section */
+#about {
+  background-color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+#about:hover {
+  background-color: #f1f1f1;
+}
+
+#about h2 {
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+#about p {
+  font-size: 1.1rem;
+  color: #666666;
+}
+
+/* Features Section */
+#features .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#features .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Section */
+#contact {
+  background-color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+#contact:hover {
+  background-color: #f1f1f1;
+}
+
+#contact .form-control {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.logo-image {
+  width: 30px; 
+  height: auto; 
+  margin-right: 5px; 
+}
+
+/* Footer */
+footer {
+  background-color: #343a40;
+  color: white;
+  padding: 20px 0;
+}
+
+body {
+  background-color: #f8f9fa;
+  padding-top: 0; /* Add this line */
+}
+
+/* OR */
+
+#chat-container {
+  max-width: 500px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 0 20px 20px; /* Change padding-top to 0 */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

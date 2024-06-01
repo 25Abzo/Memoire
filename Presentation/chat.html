@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat avec l'IA</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        #chat-container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #chat-header {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        #chat-header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        #chat-box {
+            height: 400px;
+            overflow-y: auto;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f1f1f1;
+        }
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .message.user {
+            justify-content: flex-end;
+            flex-direction: row-reverse;
+        }
+        .message.bot {
+            justify-content: flex-start;
+        }
+        .message-content {
+            padding: 10px 15px;
+            border-radius: 20px;
+            max-width: 70%;
+        }
+        .message.user .message-content {
+            background-color: #007bff;
+            color: white;
+        }
+        .message.bot .message-content {
+            background-color: #e1e1e1;
+            color: black;
+        }
+        .message img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 0 10px;
+        }
+        .input-group {
+            margin-top: 20px;
+        }
+        .quick-response {
+            margin: 10px 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .quick-response button {
+            margin: 5px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 20px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        .quick-response button:hover {
+            background-color: #0056b3;
+        }
+        .response-rating {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+        }
+        .response-rating button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5em;
+            color: #007bff;
+        }
+        .response-rating button:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">
+    <img src="https://i.pinimg.com/originals/9a/11/33/9a1133d4af3b637e1c6c8ff251785f27.jpg" alt="Logo du bot" class="d-inline-block align-middle logo-image">
+    Mon AI
+</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Accueil</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Chat Section -->
+    <div id="chat-container">
+        <div id="chat-header">
+            <img src="https://png.pngtree.com/png-clipart/20230823/original/pngtree-chatbot-color-icon-chat-bot-picture-image_8213084.png" alt="Bot">
+            <div>
+                <strong>Chat avec MonAI</strong><br>
+                <span>Nous répondons généralement en quelques minutes.</span>
+            </div>
+        </div>
+        <div id="chat-box">
+            <!-- Messages du chatbot apparaîtront ici -->
+        </div>
+        <div class="quick-response">
+            <button>Comment ça va ?</button>
+            <button>Des infos sur le chatbot?</button>
+        </div>
+        <div class="response-rating">
+            <button>&#128077;</button>
+            <button>&#128078;</button>
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control" id="user-input" placeholder="Tapez votre message ici...">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button" id="send-message">Envoyer</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#send-message').on('click', function() {
+                var userInput = $('#user-input').val();
+                if (userInput.trim() !== '') {
+                    appendMessage('user', userInput);
+                    $('#user-input').val('');
+                    // Simulate bot response
+                    setTimeout(function() {
+                        appendMessage('bot', 'Ceci est une réponse simulée.');
+                    }, 1000);
+                }
+            });
+
+            $('#user-input').on('keypress', function(e) {
+                if (e.which === 13) {
+                    $('#send-message').click();
+                }
+            });
+
+            $('.quick-response button').on('click', function() {
+                var quickResponse = $(this).text();
+                appendMessage('user', quickResponse);
+                setTimeout(function() {
+                    appendMessage('bot', 'Ceci est une réponse simulée.');
+                }, 1000);
+            });
+
+            function appendMessage(sender, text) {
+                var imageSrc = sender === 'user' ? 'https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg' : 'https://png.pngtree.com/png-clipart/20230823/original/pngtree-chatbot-color-icon-chat-bot-picture-image_8213084.png';
+                var messageHtml = `
+                    <div class="message ${sender}">
+                        ${sender === 'user' ? '' : `<img src="${imageSrc}" alt="Bot">`}
+                        <div class="message-content">${text}</div>
+                        ${sender === 'user' ? `<img src="${imageSrc}" alt="User">` : ''}
+                    </div>
+                `;
+                $('#chat-box').append(messageHtml);
+                $('#chat-box').scrollTop($('#chat-box')[0].scrollHeight);
+            }
+        });
+    </script>
+</body>
+</html>
