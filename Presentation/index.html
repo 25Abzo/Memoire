@@ -42,10 +42,19 @@
     </nav>
 
     <!-- Header Section -->
-    <header id="home" class="jumbotron text-center vh-100 d-flex flex-column justify-content-center align-items-center" data-aos="fade-up">
-        <h1 class="display-4">Bienvenue sur notre IA</h1>
-        <p class="lead">Découvrez comment notre IA révolutionne l'industrie</p>
-        <a href="#about" class="btn btn-primary btn-lg">En savoir plus</a>
+    <header id="home" class="jumbotron text-center vh-100 d-flex align-items-center" data-aos="fade-up">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 header-content">
+                    <h1 class="display-4">Bienvenue sur notre IA</h1>
+                    <p class="lead">Découvrez comment notre IA révolutionne l'industrie</p>
+                    <a href="#about" class="btn btn-primary btn-lg">En savoir plus</a>
+                </div>
+                <div class="col-md-6 header-image">
+                    <img src="https://www.lavanguardia.com/andro4all/hero/2023/11/un-robot-programando-una-web.png?width=768&aspect_ratio=16:9&format=nowebp" alt="Image IA" class="img-hover">
+                </div>
+            </div>
+        </div>
     </header>
 
     <!-- About Section -->
@@ -58,7 +67,7 @@
                     <p>Que ce soit pour l'automatisation des tâches, l'analyse des tendances du marché, ou l'amélioration de la productivité, notre IA est votre partenaire idéal pour vous aider à atteindre vos objectifs.</p>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
-                    <img src="https://th.bing.com/th/id/OIP.xDQhaUHAlHU2bjlzhDJUvQHaE7?w=2000&h=1333&rs=1&pid=ImgDetMain" class="img-fluid" alt="Image représentant l'intelligence artificielle">
+                    <img src="https://th.bing.com/th/id/OIP.xDQhaUHAlHU2bjlzhDJUvQHaE7?w=2000&h=1333&rs=1&pid=ImgDetMain" class="img-fluid img-hover" alt="Image représentant l'intelligence artificielle">
                 </div>
             </div>
         </div>
@@ -96,6 +105,42 @@
             </div>
         </div>
     </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="container my-5">
+      <h2 class="text-center mb-4" data-aos="fade-up">FAQ</h2>
+      <div class="accordion" id="faqAccordion" data-aos="fade-up">
+          <div class="card">
+              <div class="card-header" id="faqOne">
+                  <h2 class="mb-0">
+                      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Quelle est la précision de votre IA ?
+                      </button>
+                  </h2>
+              </div>
+              <div id="collapseOne" class="collapse show" aria-labelledby="faqOne" data-parent="#faqAccordion">
+                  <div class="card-body">
+                      Notre IA utilise des algorithmes avancés pour garantir une précision élevée dans ses analyses et recommandations.
+                  </div>
+              </div>
+          </div>
+          <div class="card">
+              <div class="card-header" id="faqTwo">
+                  <h2 class="mb-0">
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Comment l'IA peut-elle améliorer ma productivité ?
+                      </button>
+                  </h2>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="faqTwo" data-parent="#faqAccordion">
+                  <div class="card-body">
+                      En automatisant les tâches répétitives et en fournissant des analyses en temps réel, notre IA vous permet de vous concentrer sur des activités à plus forte valeur ajoutée.
+                  </div>
+              </div>
+          </div>
+          <!-- Ajoutez d'autres questions ici -->
+      </div>
+  </section>
 
     <!-- Contact Section -->
     <section id="contact" class="container my-5">
