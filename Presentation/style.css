@@ -27,8 +27,13 @@ header {
   color: white;
 }
 
+.header-content {
+  text-align: left;
+}
+
 .header .display-4 {
   font-weight: bold;
+  
 }
 
 .header .lead {
@@ -38,6 +43,19 @@ header {
 .header .btn {
   padding: 10px 30px;
   font-size: 1.2rem;
+  
+}
+
+.header-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* About Section */
@@ -47,7 +65,7 @@ header {
 }
 
 #about:hover {
-  background-color: #f1f1f1;
+  background-color: #0056b3;
 }
 
 #about h2 {
@@ -63,7 +81,7 @@ header {
 
 /* Features Section */
 #features .card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.5s ease;
 }
 
 #features .card:hover {
@@ -73,12 +91,12 @@ header {
 
 /* Contact Section */
 #contact {
-  background-color: #ffffff;
+  background-color: #f1f1f1;
   transition: background-color 0.3s ease;
 }
 
 #contact:hover {
-  background-color: #f1f1f1;
+  background-color: #33D7FF;
 }
 
 #contact .form-control {
@@ -108,8 +126,6 @@ body {
   padding-top: 0; /* Add this line */
 }
 
-/* OR */
-
 #chat-container {
   max-width: 500px;
   margin: 50px auto;
@@ -117,4 +133,24 @@ body {
   padding: 0 20px 20px; /* Change padding-top to 0 */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Section transition */
+section {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+#home, #about, #features, #contact {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+#home:hover, #about:hover, #features:hover, #contact:hover {
+  background-color: #e9ecef;
+  color: #343a40;
 }
